@@ -22,28 +22,25 @@ class Solution
         return count;
     }
 
-    int count_subarray_with_sumK(vector<int> & arr,int target)
+    // Optimal Solution: O(n)
+    int count_subarray_with_sumK(vector<int> &arr, int target)
     {
-        int n=arr.size();
-        int count=0;
-        int left=0,right=0;
-        int current_sum=arr[0];
-        while(right<n)
+        unordered_map<int, int> freq;
+        freq[0] = 1;  // empty prefix
+    
+        int current_sum = 0;
+        int count = 0;
+    
+        for (int x : arr)
         {
-            c
-            while(left<right && current_sum>k)
-            {
-                current_sum-=arr[left];
-                left++;
-            }
-            if(current_sum==target)count++;
-            right++;
-            if(right<n)
-            {
-                current_sum+=arr[right];
-            }
-
+            current_sum += x;
+    
+            if (freq.find(current_sum - target) != freq.end())
+                count += freq[current_sum - target];
+    
+            freq[current_sum]++;
         }
+    
         return count;
     }
 };
