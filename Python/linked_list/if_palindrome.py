@@ -16,19 +16,19 @@ class Solution:
         return head
 
     # Brute force Approach: O(n),O(n)
-    # def is_palindrome(self,head):
-    #     temp=head
-    #     stack=[]
-    #     while temp:
-    #         stack.append(temp.data)
-    #         temp=temp.next
+    def is_palindrome(self,head):
+        temp=head
+        stack=[]
+        while temp:
+            stack.append(temp.data)
+            temp=temp.next
 
-    #     temp=head
-    #     while temp:
-    #         if temp.data!=stack.pop():
-    #             return False
-    #         temp=temp.next
-    #     return True
+        temp=head
+        while temp:
+            if temp.data!=stack.pop():
+                return False
+            temp=temp.next
+        return True
 
     def is_palindrome(self,head):
         if head is None or head.next is None:

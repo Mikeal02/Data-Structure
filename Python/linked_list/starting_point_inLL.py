@@ -7,16 +7,16 @@ class Node:
 
 class Solution:
     # Brute Force Approach: O(n),O(n)
-    # def starting_point_LL(self,head):
-    #     temp=head
-    #     freq={}
-    #     while temp:
-    #         if temp in freq:
-    #             return temp.data
-    #         else:
-    #             freq[temp]=1
-    #         temp=temp.next
-    #     return None
+    def starting_point_LL(self,head):
+        temp=head
+        freq={}
+        while temp:
+            if temp in freq:
+                return temp.data
+            else:
+                freq[temp]=1
+            temp=temp.next
+        return None
 
     # Optimal Approach:O(n)
     def starting_point_LL(self,head):
