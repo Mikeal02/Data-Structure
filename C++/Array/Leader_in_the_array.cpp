@@ -3,6 +3,7 @@ using namespace std;
 
 class Solution{
     public:
+    // brute force approach: O(n^2),O(n)
     vector<int> leader_in_array(vector<int>& arr)
     {
         int n=arr.size();
@@ -22,6 +23,26 @@ class Solution{
 
         }
         ans.push_back(arr[n-1]);
+        return ans;
+    }
+    // optimal approach:O(n)
+    vector<int> leader_in_array(vector<int>& arr)
+    {
+        int n=arr.size();
+        vector<int>ans;
+        if(arr.empty())return ans;
+        int max_element=arr[n-1];
+        ans.push_back(max_element);
+        for(int i=n-2;i>=0;i--)
+        {
+            if(arr[i]>max_element)
+            {
+                ans.push_back(arr[i]);
+                max_element=arr[i];
+            }
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
     }
 
 };

@@ -26,18 +26,29 @@ class Node
 class Solution
 {
     public:
-    Node * insert_in_DLL(Node* head,int key)
+    Node* convert_arr_2DLL(vector<int>& arr)
     {
-        Node* newNode=new Node(key);
-        if(head==nullptr)return newNode;
+        Node * head=new Node(arr[0]);
+        Node * prev=head;
+
+        for(int i=1;i<arr.size();i++)
+        {
+            Node * temp=new Node(arr[i],nullptr,prev);
+            prev->next=temp;
+            prev=temp;
+        }
+        return head;
+    }
+
+    Node * delete_in_2DLL(Node * head)
+    {
         Node * temp=head;
         while(temp->next!=nullptr)
         {
             temp=temp->next;
-
         }
-        temp->next=newNode;
-        newNode->back=temp;
+        temp->back->next=nullptr;
+        temp->back=nullptr;
         return head;
     }
 
@@ -51,32 +62,19 @@ class Solution
         }
     }   
     
-    Node * convert_arr_2DLL(vector<int>& arr)
-    {
-        Node * head=new Node(arr[0]);
-        Node * prev=head;
-
-        for(int i=0;i<arr.size();i++)
-        {
-            Node * temp=new Node(arr[i],nullptr,prev);
-            prev->next=temp;
-            prev=temp;
-        }
-        return head;
-    }
 };
 
 int main()
 {
     Solution sol;
     vector<int> arr={12,5,8,7,4};
-    Node* head=convert_arr_2DLL(arr);
+    Node* head=sol.convert_arr_2DLL(arr);
 
     cout<<"Doubly Linked List Initially:"<<endl;
 
     sol.printList(head);
 
-    head=sol.insert_in_DLL(head,55);
+    head=sol.delete_in_2DLL(head);
 
     cout<<"Doubly Linked List After Inserting at tail:"<<endl;
     sol.printList(head);
@@ -85,5 +83,3 @@ int main()
 
 
 }
-
-

@@ -22,6 +22,8 @@ class Node
 
 class Solution
 {
+    public:
+    
     Node * convert_arr_2LL(vector<int> &arr)
     {
         int n=arr.size();
@@ -36,12 +38,36 @@ class Solution
         return head;
     }
 
+    // Brute Force Solution: O(n+n/2)
+    int middle_of_LL(Node* head)
+{
+    if (head == nullptr) return -1;
+
+    int length = 0;
+    Node* temp = head;
+    while (temp != nullptr)
+    {
+        length++;
+        temp = temp->next;
+    }
+
+    int mid = length / 2;   // second middle for even
+    temp = head;
+    while (mid--)
+        temp = temp->next;
+
+    return temp->val;
+}
+
+
+
+    // Optimal Approach: O(n/2),O(1) [Using hare and tortoise algorithm]
     int middle_of_LL(Node * head)
     {
         Node * fast=head;
         Node * slow=head;
 
-        while(fast->next!=nullptr)
+        while(fast!=nullptr && fast->next!=nullptr)
         {
             slow=slow->next;
             fast=fast->next->next;

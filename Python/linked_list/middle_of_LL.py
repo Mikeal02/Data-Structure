@@ -36,14 +36,14 @@ class Solution:
         return temp.data
 
     # Optimal Approach: O(n/2),O(1)
-    # def middle_of_LL(self,head):
-    #     slow=head
-    #     fast=head
-    #     while fast is not None and fast.next is not None:
-    #         slow=slow.next
-    #         fast=fast.next.next
+    def middle_of_LL(self,head):
+        slow=head
+        fast=head
+        while fast is not None and fast.next is not None:
+            slow=slow.next
+            fast=fast.next.next
 
-    #     return slow.data
+        return slow.data
 
     
 if __name__=="__main__":

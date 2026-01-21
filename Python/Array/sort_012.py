@@ -3,34 +3,34 @@ from itertools import count
 
 class Solution:
     # brute force approach:O(n)
-    # def sort_012(self,arr):
-    #     n=len(arr)
-    #     count_zero,count_one,count_two=0,0,0
-    #     for x in arr:
-    #         if x==0:
-    #             count_zero+=1
-    #         elif x==1:
-    #             count_one+=1
-    #         else:
-    #             count_two+=1
+    def sort_012(self,arr):
+        n=len(arr)
+        count_zero,count_one,count_two=0,0,0
+        for x in arr:
+            if x==0:
+                count_zero+=1
+            elif x==1:
+                count_one+=1
+            else:
+                count_two+=1
         
-    #     index=0
-    #     while count_zero>0:
-    #         arr[index]=0
-    #         index+=1
-    #         count_zero-=1
+        index=0
+        while count_zero>0:
+            arr[index]=0
+            index+=1
+            count_zero-=1
             
-    #     while count_one>0:
-    #         arr[index]=1
-    #         index+=1
-    #         count_one-=1
+        while count_one>0:
+            arr[index]=1
+            index+=1
+            count_one-=1
 
-    #     while count_two>0:
-    #         arr[index]=2
-    #         index+=1
-    #         count_two-=1
+        while count_two>0:
+            arr[index]=2
+            index+=1
+            count_two-=1
 
-
+    # Optimal approach:O(n)
     def sort_012(self,arr):
         n=len(arr)
         low,mid,high=0,0,n-1

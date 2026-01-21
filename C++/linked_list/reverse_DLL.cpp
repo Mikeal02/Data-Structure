@@ -26,21 +26,6 @@ class Node
 class Solution
 {
     public:
-    Node * insert_in_DLL(Node* head,int key)
-    {
-        Node* newNode=new Node(key);
-        if(head==nullptr)return newNode;
-        Node * temp=head;
-        while(temp->next!=nullptr)
-        {
-            temp=temp->next;
-
-        }
-        temp->next=newNode;
-        newNode->back=temp;
-        return head;
-    }
-
     void printList(Node* head)
     {
         Node* temp=head;
@@ -49,6 +34,7 @@ class Solution
             cout<<temp->val<<" ";
             temp=temp->next;
         }
+        cout<<endl;
     }   
     
     Node * convert_arr_2DLL(vector<int>& arr)
@@ -64,19 +50,60 @@ class Solution
         }
         return head;
     }
+
+    // Brute Force Approach: O(n),O(n)
+    Node * reverse_DLL(Node * head)
+    {
+        stack<int> st;
+        Node* temp=head;
+        while(temp!=nullptr)
+        {
+            st.push(temp->val);
+            temp=temp->next;
+        }
+
+        temp=head;
+        while(temp!=nullptr)
+        {
+            temp->val=st.top();
+            st.pop();
+            temp=temp->next;
+        }
+
+        return head;
+    }
+    // Optimal approach: O(n)
+    Node * reverse_DLL(Node * head)
+    {
+        if(head==nullptr)return nullptr;
+        if(head->next==nullptr)return head;
+        Node * curr=head;
+        while(curr!=nullptr)
+        {
+            Node* temp=curr->next;
+            curr->next=curr->back;
+            curr->back=temp;
+            
+            head=curr;
+            curr=temp;
+
+        }
+        return head;
+
+    }
 };
 
 int main()
 {
     Solution sol;
     vector<int> arr={12,5,8,7,4};
-    Node* head=convert_arr_2DLL(arr);
+    Node* head=sol.convert_arr_2DLL(arr);
 
     cout<<"Doubly Linked List Initially:"<<endl;
 
     sol.printList(head);
 
-    head=sol.insert_in_DLL(head,55);
+    head=sol.reverse_DLL(head);
 
     cout<<"Doubly Linked List After Inserting at tail:"<<endl;
     sol.printList(head);
@@ -85,5 +112,3 @@ int main()
 
 
 }
-
-

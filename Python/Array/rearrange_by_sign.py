@@ -2,6 +2,7 @@ from operator import ne, neg
 
 
 class Solution:
+    # Brute Force approach: O(n+n/2),O(n)
     # def arrange_by_sign(self,arr):
     #     n=len(arr)
     #     positive=[]
@@ -19,6 +20,7 @@ class Solution:
 
     #     return arr
 
+    # Optimal Approach: O(n),O(n)
     def arrange_by_sign(self,arr):
         n=len(arr)
         ans=[0]*n

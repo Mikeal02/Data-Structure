@@ -5,6 +5,7 @@ class Node:
         self.next=next1
 
 class Solution:
+    # O(n),O(1)
     def search_element(self,head,key):
         temp=head
         index=0

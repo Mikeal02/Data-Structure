@@ -8,7 +8,7 @@ class Node:
 
 class Solution:
     def insert_at_head(self,head,newData):
-        newhead=Node(1,head)
+        newhead=Node(newData,head)
         return newhead
 
     def printList(self,head):
