@@ -16,15 +16,15 @@ class Solution:
 
 
     # Better Approach: O(n)
-    # def majority_ele_by3(self,arr):
-    #     n=len(arr)
-    #     freq=defaultdict(int)
-    #     for i in range(n):
-    #         freq[arr[i]]+=1
+    def majority_ele_by3(self,arr):
+        n=len(arr)
+        freq=defaultdict(int)
+        for i in range(n):
+            freq[arr[i]]+=1
 
-    #     for x,y in freq.items():
-    #         if y>n//3:
-    #             return x
+        for x,y in freq.items():
+            if y>n//3:
+                return x
 
     # optimal Approach: O(N)
     def majority_ele_by3(self,arr):
@@ -58,7 +58,7 @@ class Solution:
         if x in arr:
             if x==element_1:
                 count1+=1
-                
+
             if x==element_2:
                 count2+=1
 

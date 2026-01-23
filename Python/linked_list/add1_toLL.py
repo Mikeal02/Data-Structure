@@ -33,7 +33,15 @@ class Solution:
         temp2=self.reverseLL(dummy_node.next)
         return temp2
 
-    
+    # Recursive Approach:
+    def add1_toLL(self,head):
+        if not head:
+            return 1
+
+        carry=self.add1_toLL(head.next)
+        sum_val=head.data+carry
+        head.data=sum_val%10
+        return sum_val//10
 
 
     def reverseLL(self,head):

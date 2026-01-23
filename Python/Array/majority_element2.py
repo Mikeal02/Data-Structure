@@ -3,29 +3,29 @@ from collections import defaultdict
 
 class Solution:
     # brute force approach:O(n^2)
-    # def majority_element(self,arr):
-    #     n=len(arr)
-    #     for x in arr:
-    #         count=0
-    #         for y in arr:
-    #             if x==y:
-    #                 count+=1
+    def majority_element(self,arr):
+        n=len(arr)
+        for x in arr:
+            count=0
+            for y in arr:
+                if x==y:
+                    count+=1
             
-    #         if count>(n/2):
-    #             return x
-    #     return -1
+            if count>(n/2):
+                return x
+        return -1
 
     # better approach:O(n) [Using hashmap/dictionary]
-    # def majority_element(self,arr):
-    #     n=len(arr)
-    #     freq=defaultdict(int)
-    #     for x in arr:
-    #         freq[x]+=1
+    def majority_element(self,arr):
+        n=len(arr)
+        freq=defaultdict(int)
+        for x in arr:
+            freq[x]+=1
 
-    #     for x,y in freq.items():
-    #         if y>(n/2):
-    #             return x
-    #     return -1
+        for x,y in freq.items():
+            if y>(n/2):
+                return x
+        return -1
 
     def majority_element(self,arr):
         n=len(arr)

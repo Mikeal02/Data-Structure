@@ -1,4 +1,5 @@
 class Solution:
+    # O(N^2)
     def rotate_matrix_by_90(self,arr):
         n=len(arr)
         for i in range(n):
