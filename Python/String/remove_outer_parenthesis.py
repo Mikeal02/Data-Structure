@@ -1,4 +1,5 @@
 class Solution:
+    # O(n)
     def remove_outer_parenthesis(self,s):
         result=""
         level=0

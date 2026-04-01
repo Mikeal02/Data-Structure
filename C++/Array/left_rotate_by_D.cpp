@@ -9,7 +9,7 @@ class solution
     {
         while(start<end)
         {
-            swap(arr[start++],arr[end---]);
+            swap(arr[start++],arr[end--]);
         }
     }
     void left_rotate_by_D(vector<int>& arr,int k, string direction)

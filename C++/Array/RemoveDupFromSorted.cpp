@@ -4,17 +4,17 @@ class solution
 {
     public:
     // Brute Force Solution: O(n),O(n)[Cause we used set to store elements]
-    // vector<int> remove_dup(vector<int> & arr)
-    // {
-    //     set<int> st;
-    //     for(int x:arr)
-    //     {
-    //         st.insert(x);
+    vector<int> remove_dup(vector<int> & arr)
+    {
+        set<int> st;
+        for(int x:arr)
+        {
+            st.insert(x);
 
-    //     }
-    //     vector<int> ans(st.begin(),st.end());
-    //     return ans;
-    // }
+        }
+        vector<int> ans(st.begin(),st.end());
+        return ans;
+    }
 
     // Optimal Solution:O(n)
     int remove_dup(vector<int>& arr)

@@ -4,6 +4,55 @@ using namespace std;
 class Solution
 {
     public:
+    // Better approach 2: O((m+n)log(m+n)), O(m+n) [Using map]
+    vector<int> union_array(vector<int>& arr1, vector<int> &arr2, int n, int m)
+    {
+        map<int,int> mp;
+        vector<int> ans;
+        
+        for(int i=0;i<n;i++)
+        {
+            mp[arr1[i]]++;
+        }
+
+        for(int i=0;i<m;i++)
+        {
+            mp[arr2[i]]++;
+        }
+
+        for(auto x:mp)
+        {
+            ans.push_back(x.first);
+        }
+        return ans;
+    }
+
+    
+
+    // Better approach 2: O((m+n)log(m+n)),O(m+n) [Using set]
+    vector<int> union_array(vector<int>& arr1, vector<int> &arr2, int n, int m)
+    {
+        set<int> st;
+        vector<int>ans;
+        for(int i=0;i<n;i++)
+        {
+            st.insert(arr1[i]);
+        }
+
+        for(int i=0;i<m;i++)
+        {
+            st.insert(arr2[i]);
+        }
+
+        for(int x:st)
+        {
+            ans.push_back(x);
+        }
+        return ans;
+        
+    }
+
+    // Optimal Solution: O(n+m),O(n+m)
     vector<int> union_array(vector<int>& arr1, vector<int> &arr2, int n, int m)
     {
         int i=0;

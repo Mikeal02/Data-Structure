@@ -6,7 +6,7 @@ using namespace std;
 int largestelement(vector<int> & arr)
 {
     int n=arr.size();
-    sort(arr.begin(),arr.end())
+    sort(arr.begin(),arr.end());
     return arr[n-1];
 }
 

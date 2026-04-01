@@ -9,7 +9,7 @@ class Solution
         int n=arr.size();
         vector<int> hash(n+1,0);
         vector<int>ans;
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;i++)n
         {
             hash[arr[i]]++;
         }
