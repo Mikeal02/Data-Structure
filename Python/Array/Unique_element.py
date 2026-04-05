@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: XOR, Hashing
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Count occurrences of each value with nested loops.
+- TIME: O(n^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Hash map frequencies; return key with count 1.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: XOR all elements—pairs cancel, singleton remains.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: x^x=0 and XOR is associative—duplicates disappear, odd one out remains.
+"""
+
 # Problem Statement: Given a non empty array of integers arr, every element appears twice except for one. Find that single one 
 
 class solution:

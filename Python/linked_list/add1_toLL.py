@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Linked List, School Addition (carry), Reversal
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Convert list to integer, add one, rebuild list (overflow for huge n).
+- TIME: O(n) | SPACE: O(n) digit array
+
+2. BETTER:
+- Step 1: Traverse from right with stack of digits then propagate carry.
+- TIME: O(n) | SPACE: O(n) stack
+
+3. OPTIMAL:
+- Step 1: Reverse list (LSB at head), add carry with dummy tail, reverse result.
+- TIME: O(n) | SPACE: O(1) extra pointers
+
+AHA-MOMENT: Addition aligns with least significant digit first—reverse so the head matches pen-and-paper carry.
+"""
+
 class Node:
     def __init__(self,data,next=None):
         self.data=data

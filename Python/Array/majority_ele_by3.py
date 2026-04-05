@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Hashing, Boyer–Moore Extended (at most two candidates)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Count frequency of each distinct element with full scans.
+- TIME: O(n^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Hash map frequencies; pick elements with count > n/3.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Modified Boyer track up to two candidates with counters; verify counts.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: At most two values can appear more than n/3 times—track two running candidates.
+"""
+
 from collections import defaultdict
 
 

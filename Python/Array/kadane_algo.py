@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Kadane (DP), Maximum Subarray
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: All subarrays—triple or double loop.
+- TIME: O(n^3) or O(n^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Prefix sums to evaluate each interval in O(1) after O(n) build—still O(n^2) intervals.
+- TIME: O(n^2) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Track current_sum; extend or reset; update global max (handle all-negative edge cases as in full Kadane).
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Best subarray ending at i depends only on whether extending beats starting fresh at i.
+"""
+
 import math
 from sys import maxsize
 class Solution:

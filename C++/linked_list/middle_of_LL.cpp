@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Two Pointers (Tortoise and Hare)
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Copy values to vector, return middle index element.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 2. BETTER:
+ * - Step 1: First pass count length L; second pass walk L/2 steps from head.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Slow and fast pointers; fast advances 2 per step; when fast ends, slow is middle.
+ * - TIME: O(n) single pass | SPACE: O(1)
+ *
+ * AHA-MOMENT: When fast travels twice as fast, slow lands at midpoint when fast hits the end.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

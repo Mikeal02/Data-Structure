@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Dutch National Flag, Two Pointers
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Sort the array with generic comparison sort.
+ * - TIME: O(n log n) | SPACE: O(log n) stack for sort
+ *
+ * 2. BETTER:
+ * - Step 1: Count occurrences of 0, 1, 2; overwrite array in three segments.
+ * - TIME: O(n) | SPACE: O(1) for counts (two passes)
+ *
+ * 3. OPTIMAL (DNF):
+ * - Step 1: Three pointers low, mid, high; mid drives 0 to left, 2 to right, 1 in middle.
+ * - TIME: O(n) | SPACE: O(1) single pass
+ *
+ * AHA-MOMENT: Only three values—partition by maintaining three regions with mid pointer as the frontier.
+ */
+
 #include<bits//stdc++.h>
 using namespace std;
 

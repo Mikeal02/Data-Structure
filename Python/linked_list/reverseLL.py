@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Linked List Reversal
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Push nodes onto stack, pop to rebuild reversed.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Recursive reversal using call stack.
+- TIME: O(n) | SPACE: O(n) stack
+
+3. OPTIMAL:
+- Step 1: Iterative prev/curr/next rewiring in one pass.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Reverse by pointing each node’s next backward while walking forward—carry prev along.
+"""
+
 class Node:
     # O(n),O(1)
     def __init__(self,data1,next1=None):

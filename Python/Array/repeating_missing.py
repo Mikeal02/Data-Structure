@@ -1,3 +1,22 @@
+"""
+DATE: April 5, 2026
+PATTERN: Math (sum and sum of squares), Hashing
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Count frequency of each value by scanning array repeatedly.
+- TIME: O(n^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Hash map frequencies; find duplicate count 2 and missing in 1..n.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Use expected sum and sum of squares vs actual to solve for the two unknown values (two equations).
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Sum and sum-of-squares give two linear equations in the repeating and missing numbers.
+"""
 
 from collections import defaultdict
 

@@ -1,10 +1,33 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Hashing, Two Pointers
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Try every pair (i, j) and check if arr[i] + arr[j] == target.
+ * - Step 2: Return YES if any pair works, else NO.
+ * - TIME: O(n^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: One pass; for each arr[i], need (target - arr[i]) among indices before i.
+ * - Step 2: Store visited values in an unordered_map for O(1) lookup.
+ * - TIME: O(n) | SPACE: O(n) due to hash map
+ *
+ * 3. OPTIMAL (when array is sorted):
+ * - Step 1: Sort (or start sorted), place pointers at both ends.
+ * - Step 2: Move left/right based on whether current sum is below or above target.
+ * - TIME: O(n log n) if sort needed, else O(n) | SPACE: O(1) for two pointers
+ *
+ * AHA-MOMENT: Complement lookup (target - x) turns pair search into O(n) with a map; two pointers work only when order is sorted.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
     public:
-    // brute force approach: O(n^2)
+    
     string two_sum(vector<int>& arr,int target)
     {
         int n=arr.size();
@@ -23,7 +46,6 @@ class Solution
         return "NO";
     }
 
-    // better approach 1:O(n),O(n)
     string two_sum(vector<int>& arr,int target)
     {
         unordered_map<int,int> mp;

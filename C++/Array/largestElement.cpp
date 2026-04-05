@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Array Scan / Selection
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Compare every element with every other to find the maximum (redundant comparisons).
+ * - TIME: O(n^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Sort ascending and take last element as maximum.
+ * - TIME: O(n log n) | SPACE: O(1) to O(n) depending on sort
+ *
+ * 3. OPTIMAL:
+ * - Step 1: One linear scan maintaining running maximum.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: Maximum over a set is computable in one pass—sorting is unnecessary for finding the max alone.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

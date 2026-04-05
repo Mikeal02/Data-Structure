@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Linked List Traversal
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Copy to array while traversing, return array size.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 2. BETTER:
+ * - Step 1: Recursive length (stack depth n).
+ * - TIME: O(n) | SPACE: O(n) call stack
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Iterative counter while walking next pointers until null.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: Length is one pass with a counter—no extra structure needed.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

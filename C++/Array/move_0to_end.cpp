@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Two Pointers
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Build new list of non-zeros in order, append zeros to fill.
+ * - TIME: O(n) | SPACE: O(n) auxiliary vector
+ *
+ * 2. BETTER:
+ * - Step 1: Stable partition with extra array copy (two passes over copy).
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Slow pointer for next non-zero slot; fast pointer scans; swap non-zeros forward.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: Partition the array in-place: the “write” index only advances when a non-zero is found.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

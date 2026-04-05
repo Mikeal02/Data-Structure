@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Matrix Simulation, Boundary Traversal
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Mark visited cells and repeatedly pick next clockwise neighbor (complex).
+ * - TIME: O(n*m) | SPACE: O(n*m) visited
+ *
+ * 2. BETTER:
+ * - Step 1: Layer-by-layer simulation with direction index and turn-on-wall logic.
+ * - TIME: O(n*m) | SPACE: O(1) extra
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Maintain top, bottom, left, right; spiral left→right, top→bottom, right→left, bottom→top while shrinking bounds.
+ * - TIME: O(n*m) | SPACE: O(1) besides output
+ *
+ * AHA-MOMENT: After each edge, shrink the corresponding boundary—no visited matrix needed when layers don’t overlap.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

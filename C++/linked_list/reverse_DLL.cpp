@@ -1,3 +1,25 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Linked List, In-place Reversal
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Copy node values into a vector, reverse the vector, rebuild links—or use a stack of nodes.
+ * - Step 2: Reassign next/back from rebuilt order.
+ * - TIME: O(n) | SPACE: O(n) for auxiliary storage
+ *
+ * 2. BETTER:
+ * - Step 1: Use a stack of node pointers; first pass push all nodes, second pass pop and relink in reverse.
+ * - TIME: O(n) | SPACE: O(n) for stack
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Single traversal; at each node swap next and back (prev).
+ * - Step 2: Move head to old tail via pointer walk.
+ * - TIME: O(n) | SPACE: O(1) pointers only
+ *
+ * AHA-MOMENT: In a DLL, reversing is just swapping the two directions at every node—no extra structure needed.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

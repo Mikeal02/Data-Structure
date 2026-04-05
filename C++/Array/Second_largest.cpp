@@ -1,3 +1,24 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Array Scan
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Find max, then find max among elements strictly less than first max (two passes).
+ * - Step 2: Or compare all pairs for second largest.
+ * - TIME: O(n^2) for pair approach | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Sort descending (or ascending) and take second distinct position.
+ * - TIME: O(n log n) | SPACE: O(1) to O(n)
+ *
+ * 3. OPTIMAL:
+ * - Step 1: One pass: maintain largest and second_largest; update when seeing larger or smaller-than-max but larger than second.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: Track two leaders in one pass—no sort needed for second place.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

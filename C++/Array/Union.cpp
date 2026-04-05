@@ -1,3 +1,26 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Hashing, Two Pointers, Sorting
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Concatenate both arrays into a list and remove duplicates by checking each element against all seen (nested loops).
+ * - Step 2: Sort the result if order is required.
+ * - TIME: O((n+m)^2) worst naive dedup | SPACE: O(n+m)
+ *
+ * 2. BETTER:
+ * - Step 1: Insert all elements from both arrays into a set (or map keys) for uniqueness.
+ * - Step 2: Copy sorted order from set/map into answer vector.
+ * - TIME: O((n+m) log(n+m)) | SPACE: O(n+m) for the set
+ *
+ * 3. OPTIMAL (when both arrays are already sorted):
+ * - Step 1: Merge-like two pointers, skipping duplicates within each array and across pointers.
+ * - Step 2: Push smaller head, advance; on equality advance both.
+ * - TIME: O(n+m) | SPACE: O(1) extra besides output
+ *
+ * AHA-MOMENT: Uniqueness is a set problem; sorted inputs unlock linear two-pointer merge without global sort.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

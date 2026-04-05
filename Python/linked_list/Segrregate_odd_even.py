@@ -1,4 +1,24 @@
 
+"""
+DATE: April 5, 2026
+PATTERN: Linked List Partitioning
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Build two arrays of values by parity, concatenate lists.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Dummy odd and even heads; splice nodes into two chains then join.
+- TIME: O(n) | SPACE: O(1)
+
+3. OPTIMAL:
+- Step 1: Same as better—single pass with odd_tail and even_tail pointers.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Partition like quicksort’s partition—two queues stitched by value property (index parity here).
+"""
+
 class Node:
     # O(n),O(1)
     def __init__(self,data1,next1=None):

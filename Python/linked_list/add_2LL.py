@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Linked List, Multi-precision Addition
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Convert both lists to big integers, add, split digits back.
+- TIME: O(n) | SPACE: O(n) string/int storage
+
+2. BETTER:
+- Step 1: Push digits to stacks, pop while adding carry.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Reverse both lists, walk with carry, build dummy result, reverse output.
+- TIME: O(n) | SPACE: O(1) besides output
+
+AHA-MOMENT: Same as column addition—align least significant digits by reversing before merging.
+"""
+
 class Node:
     def __init__(self,data,next=None):
         self.data=data

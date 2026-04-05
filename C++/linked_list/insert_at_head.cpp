@@ -1,3 +1,22 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Linked List, Sentinel / Head Insert
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Rebuild entire list with new element at front from array copy.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 2. BETTER:
+ * - Step 1: Create node and splice: newNode->next = head; return newNode as head.
+ * - TIME: O(1) | SPACE: O(1) for one node
+ *
+ * 3. OPTIMAL:
+ * - Same as better—insert at head is constant time for singly linked list.
+ *
+ * AHA-MOMENT: New head is just allocating one node and repointing a single pointer—no traversal.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Prefix Sum + Hash Map, Sliding Window (non-negative)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Check every subarray sum.
+- TIME: O(n^2) or O(n^3) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Prefix sums with hash of first occurrence for O(n) when negatives exist.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: If all numbers >= 0, two-pointer expand/shrink window for sum K.
+- TIME: O(n) | SPACE: O(1) for window variant
+
+AHA-MOMENT: With negatives, sliding window fails; prefix + first-index map gives longest length in one pass.
+"""
+
 class Solution:
     # Brute Force approach: O(n^2)
     # def longest_subarray_k(self,arr,k):

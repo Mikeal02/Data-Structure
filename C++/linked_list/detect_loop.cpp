@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Floyd Cycle Detection, Hashing
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: For each node, compare pointer with all previously visited nodes (nested).
+ * - TIME: O(n^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Hash map/set of visited node addresses; repeat means cycle.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 3. OPTIMAL (Floyd):
+ * - Step 1: Slow moves 1 step, fast moves 2; if they meet, cycle exists.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: If there is a cycle, the fast pointer trapped inside will eventually lap the slow pointer.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

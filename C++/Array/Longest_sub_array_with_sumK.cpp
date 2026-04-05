@@ -1,3 +1,26 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Prefix Sum, Hashing, Sliding Window
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Enumerate all subarrays (i..j) and compute each sum.
+ * - Step 2: Track maximum length where sum equals K.
+ * - TIME: O(n^3) with naive resum, or O(n^2) with running sum inner loop | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Use prefix sums P[j] - P[i-1] to get any subarray sum in O(1) after O(n) prefix build.
+ * - Step 2: Still need pairs (i,j) without extra structure—often O(n^2).
+ * - TIME: O(n^2) | SPACE: O(n) for prefix array
+ *
+ * 3. OPTIMAL:
+ * - Step 1 (general integers): For each end index, need earlier prefix equal to (current_prefix - K); track first index of each prefix in a map for longest length.
+ * - Step 2 (non-negative array only): Sliding window shrink when sum > K.
+ * - TIME: O(n) | SPACE: O(n) for hash map (window is O(1) extra)
+ *
+ * AHA-MOMENT: Longest length with sum K is a “first occurrence of prefix” problem: length = i - firstIndex[prefix - K].
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Two Pointers, Partition
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Build new list without zeros then pad zeros.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Stable partition using extra array of same size.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: In-place: write non-zeros forward with slow pointer, or swap non-zero forward.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Treat zeros as holes to fill—compact non-zeros to the front.
+"""
+
 class Solution:
     # brute force approach: O(2n),O(n)
     def move_zero_to_end(self,arr):

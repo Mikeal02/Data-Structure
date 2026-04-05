@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Matrix Transform (Transpose + Reverse)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Copy into new matrix with rotated coordinates.
+- TIME: O(n^2) | SPACE: O(n^2)
+
+2. BETTER:
+- Step 1: Rotate layer by layer with four-way swaps.
+- TIME: O(n^2) | SPACE: O(1)
+
+3. OPTIMAL:
+- Step 1: Transpose then reverse each row (90° clockwise for square matrices).
+- TIME: O(n^2) | SPACE: O(1)
+
+AHA-MOMENT: 90° rotation factorizes into transpose (flip diagonal) and horizontal flip.
+"""
+
 class Solution:
     # O(N^2)
     def rotate_matrix_by_90(self,arr):

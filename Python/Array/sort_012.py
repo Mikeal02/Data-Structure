@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Dutch National Flag (Three-Way Partition)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Use generic sort.
+- TIME: O(n log n) | SPACE: O(log n)
+
+2. BETTER:
+- Step 1: Count 0s,1s,2s then overwrite array in three segments.
+- TIME: O(n) | SPACE: O(1) counts, two passes
+
+3. OPTIMAL:
+- Step 1: Single-pass three pointers low/mid/high (DNF).
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Maintain four regions: <mid known, ==1, unknown, >high by swapping around mid.
+"""
+
 from itertools import count
 
 

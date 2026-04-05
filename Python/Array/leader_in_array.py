@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Suffix Maximum / Greedy Right-to-Left
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: For each i, scan right for any larger element.
+- TIME: O(n^2) | SPACE: O(n) for answer
+
+2. BETTER:
+- Step 1: Precompute suffix max array.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Walk from right; track max from right; leaders when arr[i] > max_so_far (variant by definition).
+- TIME: O(n) | SPACE: O(1) extra
+
+AHA-MOMENT: A leader is larger than everything to its right—suffix scan carries exactly that information.
+"""
+
 class Solution:
     # Brute force approach: O(n^2)
     def leader_in_array(self,arr):

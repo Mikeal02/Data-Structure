@@ -1,4 +1,24 @@
 
+"""
+DATE: April 5, 2026
+PATTERN: Stack, Reverse Half
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Copy values to array; compare array to reverse.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Push first half to stack, compare second half pops.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Find middle, reverse second half, compare two pointers, restore list.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Palindrome in a list is symmetry—reverse half and match, or use slow/fast to find the fold line.
+"""
+
 class Node:
     # O(n),O(1)
     def __init__(self,data1,next1=None):

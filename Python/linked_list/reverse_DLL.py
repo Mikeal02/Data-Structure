@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: In-place DLL Reversal
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Copy values to stack, rewrite data field along list.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Extract nodes to array, rebuild links in reverse order.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Swap next and back for each node while traversing; update head to old tail.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Reversing a DLL is swapping both directions at every node—no value duplication needed.
+"""
+
 class Node:
     def __init__(self,data1,next1=None,back1=None):
         self.data=data1

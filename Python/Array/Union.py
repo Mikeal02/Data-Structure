@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Hashing, Two Pointers on Sorted Arrays
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Concatenate and deduplicate by checking all prior elements.
+- TIME: O((n+m)^2) naive | SPACE: O(n+m)
+
+2. BETTER:
+- Step 1: Dict or set keys from both arrays; output sorted keys if needed.
+- TIME: O((n+m) log(n+m)) | SPACE: O(n+m)
+
+3. OPTIMAL:
+- Step 1: If inputs sorted, merge unique with two pointers in linear time.
+- TIME: O(n+m) | SPACE: O(1) extra
+
+AHA-MOMENT: Uniqueness is a set operation; sorted merge avoids global sort of combined elements.
+"""
+
 from collections import defaultdict
 class Solution:
     # Better approach 2: O((m+n)log(m+n)), O(m+n) [Using map/dict]

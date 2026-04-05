@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Sorting + Two Pointers (k-Sum / 4Sum)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Try all quadruples (i,j,k,l) and compare sum to target.
+- TIME: O(n^4) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Hash pair sums—still heavy on memory.
+- TIME: O(n^2) to O(n^3) variants | SPACE: O(n^2) possible
+
+3. OPTIMAL:
+- Step 1: Sort; fix i,j then two-pointer on remaining range; skip duplicates.
+- TIME: O(n^3) | SPACE: O(1) besides output lists
+
+AHA-MOMENT: Reducing two free indices to a sorted two-pointer sweep cuts one layer of brute force.
+"""
+
 class Solution:
     def fourSum(self, arr, target):
         n=len(arr)

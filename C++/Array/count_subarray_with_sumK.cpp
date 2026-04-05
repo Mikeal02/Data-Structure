@@ -1,3 +1,25 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Prefix Sum, Hashing
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Fix start i, extend j while tracking running sum; increment count when sum equals K.
+ * - Step 2: Repeat for all i.
+ * - TIME: O(n^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Build prefix array; check all (i,j) pairs via prefix difference.
+ * - TIME: O(n^2) | SPACE: O(n) for prefix array
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Maintain running prefix sum; map freq of each prefix (initialize freq[0]=1).
+ * - Step 2: For each prefix P, add freq[P - K] to count, then freq[P]++.
+ * - TIME: O(n) | SPACE: O(n) due to unordered_map
+ *
+ * AHA-MOMENT: Subarray sum ending at index j equals K iff prefix[j] - prefix[i-1] = K, i.e. count prior prefixes equal to prefix[j] - K.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
  

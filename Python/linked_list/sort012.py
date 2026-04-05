@@ -1,4 +1,24 @@
 
+"""
+DATE: April 5, 2026
+PATTERN: Dutch National Flag on Linked List
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Extract values, sort array, rewrite list.
+- TIME: O(n log n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Count 0/1/2 then overwrite node values in order.
+- TIME: O(n) two passes | SPACE: O(1)
+
+3. OPTIMAL:
+- Step 1: Three dummy heads for 0,1,2 buckets; distribute nodes; merge chains.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Multi-value partition on linked lists uses three sublists then concatenate—same idea as DNF array.
+"""
+
 class Node:
     def __init__(self,data,next=None):
         self.data=data

@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Tortoise and Hare
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Count length, walk length//2 steps.
+- TIME: O(n) two passes | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Store nodes in list; index middle.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Slow and fast pointers; when fast reaches end, slow is middle.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Fast at 2x speed means slow reaches half distance when fast finishes.
+"""
+
 class Node:
     # O(n),O(1)
     def __init__(self,data1,next1=None):

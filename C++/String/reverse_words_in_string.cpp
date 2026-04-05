@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: String Parsing, Two Pointers
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Split by spaces into vector of words (manual or stream), reverse vector, join.
+ * - TIME: O(n) | SPACE: O(n) for words storage
+ *
+ * 2. BETTER:
+ * - Step 1: Single pass collect words, build answer from end word to start with spaces.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 3. OPTIMAL (in-place variant exists on char arrays):
+ * - Step 1: Trim/skip spaces; scan from right, identify word boundaries, append words to result.
+ * - TIME: O(n) | SPACE: O(n) for output string
+ *
+ * AHA-MOMENT: Word order reversal is easier when scanning the string from the right—each word is a contiguous non-space run.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Doubly Linked List, Multi-Deletion
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Build new list excluding key by scanning into new structure.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Mark nodes to delete then second pass—still two passes.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Single pass; when data==key, relink prev.next and next.back; advance using saved next pointer.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Save next before mutating links—otherwise you lose the traversal cursor when deleting current.
+"""
+
 class Node:
     def __init__(self,data1,next1=None,back1=None):
         self.data=data1

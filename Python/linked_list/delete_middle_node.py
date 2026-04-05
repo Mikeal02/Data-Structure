@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Two Pointers (slow/fast), Linked List
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Count length n, walk n//2-1, unlink next node.
+- TIME: O(n) two passes | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Store nodes in array; remove middle by index.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Fast moves 2 steps, slow 1; when fast ends, slow is before middle node to delete.
+- TIME: O(n) single pass | SPACE: O(1)
+
+AHA-MOMENT: Slow/fast lands at the predecessor of the middle node—exactly where you need to splice.
+"""
+
 class Node:
     def __init__(self,data,next=None):
         self.data=data

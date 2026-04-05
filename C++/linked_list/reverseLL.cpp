@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Linked List Reversal (Iterative / Recursive)
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Push all nodes onto stack, pop to rebuild reversed order.
+ * - TIME: O(n) | SPACE: O(n) for stack
+ *
+ * 2. BETTER:
+ * - Step 1: Recursive reverse: reverse rest, then fix head’s next.
+ * - TIME: O(n) | SPACE: O(n) recursion stack
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Iterative: prev=null, curr=head; repeatedly next=curr->next; curr->next=prev; advance.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: Reverse by rewiring each node’s next to point backward—carry prev and curr forward.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

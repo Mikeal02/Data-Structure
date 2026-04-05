@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Math (sum/XOR), Hashing
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: For each number 1..N, linear search in array for presence.
+ * - TIME: O(N^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Use hash set of array elements; scan 1..N for missing.
+ * - TIME: O(N) | SPACE: O(N)
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Sum formula N(N+1)/2 minus sum(arr), or XOR all indices and values together.
+ * - TIME: O(N) | SPACE: O(1)
+ *
+ * AHA-MOMENT: Expected sum (or XOR) minus actual isolates the single missing number without extra storage.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 class solution

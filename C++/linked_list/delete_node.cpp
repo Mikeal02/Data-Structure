@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Linked List Traversal
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Convert to array, drop last, rebuild list.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 2. BETTER:
+ * - Step 1: Count length first, second pass to remove node before last.
+ * - TIME: O(n) two passes | SPACE: O(1)
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Single pass to node before tail (while temp->next->next), unlink last node and free.
+ * - TIME: O(n) one pass | SPACE: O(1)
+ *
+ * AHA-MOMENT: To delete the last node you only need the predecessor—stop when next->next is null.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

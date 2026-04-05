@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Linear Scan / Sliding Window on 1s
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: For each subarray, count ones.
+- TIME: O(n^3) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: For each starting 1, extend run forward.
+- TIME: O(n^2) worst | SPACE: O(1)
+
+3. OPTIMAL:
+- Step 1: One pass; increment streak on 1, reset on 0, track max streak.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Longest block of consecutive 1s is a single-pass streak counter.
+"""
+
 # optimal solution: O(n)
 def max_ones(arr):
     n=len(arr)

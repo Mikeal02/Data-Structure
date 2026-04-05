@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Reversal Rotation
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Rotate left by one, D times.
+- TIME: O(n * D) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Extra array with index (i - D) mod n.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Reverse first k, reverse rest, reverse whole (adjust for left/right).
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Three reversals implement rotation without extra storage.
+"""
+
 class solution:
     # optimal solution: O(n),O(1)
 

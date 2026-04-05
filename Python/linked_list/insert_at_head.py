@@ -1,3 +1,22 @@
+"""
+DATE: April 5, 2026
+PATTERN: Linked List, Head Insert
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Rebuild entire list with new node at front from copied values.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Insert dummy head then move—same O(1) core.
+
+3. OPTIMAL:
+- Step 1: newNode.next = head; return newNode as new head.
+- TIME: O(1) | SPACE: O(1)
+
+AHA-MOMENT: Only the head pointer changes—no traversal for prepend on singly linked lists.
+"""
+
 from platform import node
 
 

@@ -1,3 +1,22 @@
+"""
+DATE: April 5, 2026
+PATTERN: Doubly Linked List, Tail Insert
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Rebuild list with extra value at end.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Walk to tail, append—same as optimal without tail pointer.
+
+3. OPTIMAL:
+- Step 1: Traverse to last node; link next/back for new node.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Tail insert needs four link updates in a DLL—prev of new, next of old tail, etc.
+"""
+
 class Node:
     def __init__(self,data1,next1=None,back1=None):
         self.data=data1

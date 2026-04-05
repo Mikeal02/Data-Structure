@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Greedy, String Scan
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Try every substring ending at each position, check odd numeric value.
+- TIME: O(n^3) with conversion | SPACE: O(n)
+
+2. BETTER:
+- Step 1: From right, find last odd digit; take prefix from first non-leading zero to that digit.
+- TIME: O(n) | SPACE: O(1) extra
+
+3. OPTIMAL:
+- Step 1: Same single right-to-left scan for last odd; trim leading zeros on left bound.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Larger magnitude means longer prefix with a valid odd last digit—scan from the right for the last odd digit.
+"""
+
 class Solution:
     # O(n)
     def largest_odd_number(self,s:str)->str:

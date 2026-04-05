@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Two Pointers, Array Partition
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Split into positives and negatives lists, then interleave by index rules.
+ * - TIME: O(n) | SPACE: O(n) for extra vectors
+ *
+ * 2. BETTER:
+ * - Step 1: Single pass to place positives at even and negatives at odd indices using separate write pointers (if counts balanced).
+ * - TIME: O(n) | SPACE: O(n) for result array
+ *
+ * 3. OPTIMAL (structure in code):
+ * - Step 1: Separate positive/negative buckets then merge in required alternating pattern.
+ * - TIME: O(n) | SPACE: O(n) for output (in-place alternating with negatives/positives may need follow-up variants).
+ *
+ * AHA-MOMENT: Decouple “collect by sign” from “scatter to alternating slots”—two-phase keeps logic simple.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
  

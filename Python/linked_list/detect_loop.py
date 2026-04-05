@@ -1,3 +1,22 @@
+"""
+DATE: April 5, 2026
+PATTERN: Floyd Cycle Detection, Hashing
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: For each node, compare with all previous nodes’ addresses.
+- TIME: O(n^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Hash set of visited nodes; cycle if revisit.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Tortoise and hare—if fast meets slow, cycle exists.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Two speeds guarantee meeting inside a cycle; no extra memory needed.
+"""
 
 class Node:
     # O(n),O(1)

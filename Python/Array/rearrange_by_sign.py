@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Two-Phase Array Construction
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Split positives and negatives then interleave by index rules.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Write to answer array with separate even/odd index pointers for signs.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Same asymptotics; in-place alternating variants exist for specific constraints.
+- TIME: O(n) | SPACE: O(n) for output buffer in typical solution
+
+AHA-MOMENT: Separate “collect by sign” from “place at alternating slots” to keep indices simple.
+"""
+
 from operator import ne, neg
 
 

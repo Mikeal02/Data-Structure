@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Sum Formula, XOR
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: For each number 1..N check membership in arr.
+- TIME: O(N^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Set of arr elements; find missing in 1..N.
+- TIME: O(N) | SPACE: O(N)
+
+3. OPTIMAL:
+- Step 1: Expected sum N(N+1)/2 minus actual sum, or XOR all indices and values.
+- TIME: O(N) | SPACE: O(1)
+
+AHA-MOMENT: XOR cancels pairs; missing number is the XOR residue (or use sum difference).
+"""
+
 from operator import xor
 
 

@@ -1,3 +1,22 @@
+"""
+DATE: April 5, 2026
+PATTERN: Two Pointers on Sorted DLL
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Try all pairs (i,j) with i<j.
+- TIME: O(n^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Hash complements for each left pointer—O(n) space.
+
+3. OPTIMAL:
+- Step 1: Left at head, right at tail; move inward by comparing sum to target (sorted order by value).
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Like two-sum on a sorted array—DLL gives O(1) move left and right via next/back.
+"""
+
 class Node:
     def __init__(self,data1,next1=None,back1=None):
         self.data=data1

@@ -1,3 +1,22 @@
+"""
+DATE: April 5, 2026
+PATTERN: Linear Search on Linked List
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Recursive search returning index—extra stack.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Same linear scan with index counter.
+
+3. OPTIMAL:
+- Step 1: Iterative walk; return index when data matches else continue.
+- TIME: O(n) worst | SPACE: O(1)
+
+AHA-MOMENT: Linked lists have no random access—search is inherently linear.
+"""
+
 class Node:
     # O(n),O(1)
     def __init__(self,data1,next1=None):

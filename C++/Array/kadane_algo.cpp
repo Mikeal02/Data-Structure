@@ -1,3 +1,25 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Dynamic Programming (running state), Array
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Enumerate every subarray (i..j) and compute sum.
+ * - Step 2: Track global maximum sum.
+ * - TIME: O(n^3) naive or O(n^2) with running inner sum | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Prefix sums: max subarray ending at j is max over i of (P[j]-P[i-1]) in O(n^2).
+ * - TIME: O(n^2) | SPACE: O(n) for prefix array
+ *
+ * 3. OPTIMAL (Kadane):
+ * - Step 1: Track current_sum; reset or extend: if current_sum + arr[i] is best, extend; optionally reset negative running sum to 0 (all-negative arrays need tracking max element separately).
+ * - Step 2: Update global max each step.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: Optimal subarray ending at i either extends the best ending at i-1 or starts fresh at i—constant state suffices.
+ */
+
 // Kadane Algorithm: Maximum Subarray Sum
 #include<bits/stdc++.h>
 using namespace std;

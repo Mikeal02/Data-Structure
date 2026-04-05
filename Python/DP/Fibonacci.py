@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Dynamic Programming, Space-Optimized Iteration
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Naive recursion F(n)=F(n-1)+F(n-2) without memo.
+- TIME: O(2^n) | SPACE: O(n) stack
+
+2. BETTER:
+- Step 1: Memoization or dp array of size n+1.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Iterate with only prev2 and prev (rolling variables).
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Only the last two values are needed to extend the sequence—constant memory suffices.
+"""
+
 class solution:
     # Memoization Approach:
     # def fib(self,n,dp):

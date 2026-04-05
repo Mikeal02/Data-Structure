@@ -1,3 +1,24 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Hashing, Bit Manipulation (XOR)
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: For each element, count frequency with inner loop.
+ * - Step 2: Return element with count 1.
+ * - TIME: O(n^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Hash map count occurrences; return key with value 1.
+ * - TIME: O(n) | SPACE: O(n) due to map
+ *
+ * 3. OPTIMAL (if every element appears twice except one):
+ * - Step 1: XOR of all numbers—pairs cancel (x^x=0), singleton remains.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: XOR is associative/commutative and self-inverse—duplicates vanish, unique bit pattern survives.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

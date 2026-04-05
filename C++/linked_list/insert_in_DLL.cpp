@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Doubly Linked List
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Rebuild list from vector including new value at end.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 2. BETTER:
+ * - Step 1: Walk to tail, append new node, set both next and back links.
+ * - TIME: O(n) to find tail | SPACE: O(1)
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Keep tail pointer for O(1) insert at end; without tail, walk is required once.
+ * - TIME: O(n) without tail | SPACE: O(1)
+ *
+ * AHA-MOMENT: Tail insertion in DLL is four pointer writes—prev of new, next of old tail, etc.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

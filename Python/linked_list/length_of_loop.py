@@ -1,4 +1,23 @@
 
+"""
+DATE: April 5, 2026
+PATTERN: Floyd Cycle (phase 2: measure loop)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Hash map of node to step index; on repeat return difference.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Store visited in set without timing—cannot get length directly.
+
+3. OPTIMAL:
+- Step 1: Detect meeting with slow/fast; fix one pointer at head, move both one step until meet (entry); count steps around cycle with fixed pointer.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: After collision, advancing one pointer to head and moving both equally finds cycle start; walk one loop to count length.
+"""
+
 class Node:
     # O(n),O(1)
     def __init__(self,data1,next1=None):

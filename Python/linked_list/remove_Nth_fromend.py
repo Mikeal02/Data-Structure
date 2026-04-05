@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Two Pointers (gap / fast-ahead)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Count length L, remove node at index L-N.
+- TIME: O(n) two passes | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Store nodes in array; remove by index.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Fast pointer starts N ahead of slow; when fast hits end, slow is before target.
+- TIME: O(n) one pass | SPACE: O(1)
+
+AHA-MOMENT: Maintaining gap N between pointers positions the slow pointer exactly before the nth-from-end node.
+"""
+
 class Node:
     def __init__(self,data,next=None):
         self.data=data

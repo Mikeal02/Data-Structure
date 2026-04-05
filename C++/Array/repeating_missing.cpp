@@ -1,3 +1,24 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Hashing / Counting
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: For each number 1..n, count occurrences by scanning the whole array each time.
+ * - TIME: O(n^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Frequency map or array of size n+1; increment per value; find value with count 2 and missing 0.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 3. OPTIMAL (math variants exist):
+ * - Step 1: Use counting array as in “better” when values in 1..n—same asymptotics, minimal overhead.
+ * - Alternative: sum and sum of squares equations to derive repeating and missing (O(n) time, O(1) space).
+ * - TIME: O(n) | SPACE: O(n) for frequency array here, or O(1) with algebraic method
+ *
+ * AHA-MOMENT: One duplicate and one missing show up as count 2 and count 0 in a 1..n index frequency table.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

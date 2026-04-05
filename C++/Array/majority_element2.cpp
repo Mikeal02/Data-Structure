@@ -1,3 +1,26 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Hashing, Boyer–Moore Voting
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: For each element, count occurrences with inner loop over full array.
+ * - Step 2: Return element with count > n/2 if exists.
+ * - TIME: O(n^2) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Frequency map over all elements.
+ * - Step 2: Find key with value > n/2.
+ * - TIME: O(n) | SPACE: O(n) due to hash map
+ *
+ * 3. OPTIMAL (Boyer–Moore majority vote):
+ * - Step 1: Cancel pairs of distinct elements; remaining candidate is only possible majority.
+ * - Step 2: Second pass to verify count > n/2.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: The majority element survives pairwise cancellation; at most one candidate needs verification.
+ */
+
 #include<bits/stdc++h>
 using namespace std;
 

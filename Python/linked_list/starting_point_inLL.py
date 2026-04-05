@@ -1,4 +1,23 @@
 
+"""
+DATE: April 5, 2026
+PATTERN: Floyd Cycle (entry point)
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Hash visited nodes; first repeat is start of cycle.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Store timestamps per node.
+
+3. OPTIMAL:
+- Step 1: Meet slow/fast inside cycle; reset one to head; move both one step until they meet at entry.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Distance from head to cycle entry equals distance from meeting point to entry along the cycle—Floyd’s phase 2.
+"""
+
 class Node:
     # O(n),O(1)
     def __init__(self,data1,next1=None):

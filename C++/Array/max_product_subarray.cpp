@@ -1,3 +1,24 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Dynamic Programming, Array
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Enumerate all subarrays and multiply elements; track maximum product.
+ * - TIME: O(n^2) or O(n^3) | SPACE: O(1)
+ *
+ * 2. BETTER:
+ * - Step 1: Prefix/suffix products with care for zeros—still need sign handling.
+ * - TIME: O(n^2) naive extensions | SPACE: O(1)
+ *
+ * 3. OPTIMAL:
+ * - Step 1: Track both current maximum and minimum ending here (negatives flip min to max).
+ * - Step 2: Update answer from current_max each index.
+ * - TIME: O(n) | SPACE: O(1)
+ *
+ * AHA-MOMENT: A negative number turns the smallest subproduct into the largest—track min and max together.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

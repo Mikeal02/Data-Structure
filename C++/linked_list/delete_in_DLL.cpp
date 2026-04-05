@@ -1,3 +1,23 @@
+/*
+ * DATE: April 5, 2026
+ * PATTERN: Doubly Linked List, Pointer Surgery
+ *
+ * APPROACHES:
+ * 1. BRUTE FORCE:
+ * - Step 1: Copy list to vector, remove element by index, rebuild DLL from vector.
+ * - TIME: O(n) | SPACE: O(n)
+ *
+ * 2. BETTER:
+ * - Step 1: Find node with value/key via linear search, relink prev/next for that node only.
+ * - TIME: O(n) search | SPACE: O(1)
+ *
+ * 3. OPTIMAL (delete tail as in code):
+ * - Step 1: Walk to last node; set prev->next=nullptr, clear back of removed node.
+ * - TIME: O(n) to reach tail | SPACE: O(1)
+ *
+ * AHA-MOMENT: In a DLL, deletion is local: fix two neighbors’ pointers—no full list copy.
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

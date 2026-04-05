@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Hashing, Boyer–Moore Majority Vote
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Count each element with inner loop.
+- TIME: O(n^2) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Frequency map; find count > n/2.
+- TIME: O(n) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Boyer–Moore voting; verify candidate in second pass.
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Pairwise cancellation leaves only a possible majority candidate to verify.
+"""
+
 from collections import defaultdict
 
 

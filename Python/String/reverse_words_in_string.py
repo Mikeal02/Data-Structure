@@ -1,3 +1,22 @@
+"""
+DATE: April 5, 2026
+PATTERN: String Parsing, Reverse Iteration
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: split(), reverse list, join.
+- TIME: O(n) | SPACE: O(n) word list
+
+2. BETTER:
+- Step 1: Manual tokenize left-to-right into deque, pop from back when building.
+
+3. OPTIMAL:
+- Step 1: Scan string from right; skip spaces; capture each word boundary by index.
+- TIME: O(n) | SPACE: O(n) for result string
+
+AHA-MOMENT: Reversed word order is natural when reading the string from the end and peeling words.
+"""
+
 class Solution:
     # Optimal Solution: O(n)
     def reverse_words(self,s):

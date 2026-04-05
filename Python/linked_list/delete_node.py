@@ -1,3 +1,23 @@
+"""
+DATE: April 5, 2026
+PATTERN: Linked List Traversal
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: Rebuild list from array excluding last value.
+- TIME: O(n) | SPACE: O(n)
+
+2. BETTER:
+- Step 1: Count length then remove node at position length-1.
+- TIME: O(n) | SPACE: O(1)
+
+3. OPTIMAL:
+- Step 1: Walk until temp.next.next is None; set temp.next=None (delete tail).
+- TIME: O(n) | SPACE: O(1)
+
+AHA-MOMENT: Deleting last node only needs the penultimate node’s next pointer cleared.
+"""
+
 class Node:
 
     def __init__(self,val1,next1=None):

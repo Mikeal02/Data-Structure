@@ -1,4 +1,25 @@
 
+"""
+DATE: April 5, 2026
+PATTERN: Linked List, Two Pointer Alignment
+
+APPROACHES:
+1. BRUTE FORCE:
+- Step 1: For each node in list2, scan all of list1 for same reference.
+- TIME: O(n*m) | SPACE: O(1)
+
+2. BETTER:
+- Step 1: Hash set of addresses from one list; walk the other.
+- TIME: O(n+m) | SPACE: O(n)
+
+3. OPTIMAL:
+- Step 1: Length difference d; advance longer list by d, then walk both together for first equal node.
+- Alternative: traverse A+B and B+A until pointers meet.
+- TIME: O(n+m) | SPACE: O(1)
+
+AHA-MOMENT: Equalizing path lengths (or cyclic concatenation trick) aligns both walkers at the merge point.
+"""
+
 class Node:
     def __init__(self,data,next=None):
         self.data=data
