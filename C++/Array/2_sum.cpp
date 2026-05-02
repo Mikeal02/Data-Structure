@@ -17,7 +17,7 @@
  * - Step 1: Sort (or start sorted), place pointers at both ends.
  * - Step 2: Move left/right based on whether current sum is below or above target.
  * - TIME: O(n log n) if sort needed, else O(n) | SPACE: O(1) for two pointers
- *
+ * CONFIDENCE: High
  * AHA-MOMENT: Complement lookup (target - x) turns pair search into O(n) with a map; two pointers work only when order is sorted.
  */
 
@@ -87,6 +87,52 @@ class Solution
         }
         return "NO";
     }
+
+vector<vector<int>> two_sum(vector<int>&arr,int target)
+{
+   int n=arr.size();
+   unordered_map<int,vector<int>> seen;
+   vector<vector<int>> result;
+   for(int i=0;i<n;i++)
+   {
+    int compliment=target-arr[i];
+    if(seen.find(compliment)!=seen.end())
+    {
+        for(int j:seen[complement])
+        {
+            result.push_back({j,i});
+        }
+    }
+    seen[arr[i]].push_back(i);
+   }
+   return result;
+}
+
+vector<vector<int>> two_sum(vector<int> &arr, int target)
+{
+    set<int> seen;
+    set<pair<int,int>> result;
+    for(int nums:arr)
+    {
+        int compliment=target-nums;
+        if(seen.count(compliment))
+        {
+            int a=min(nums,compliment);
+            int b=max(nums,compliment);
+            result.insert({a,b});
+        }
+
+        seen.insert(nums);
+    }
+
+    vector<vector<int>> ans;
+    for(auto p: result)
+    {
+        ans.push_back({p.first, p.second});
+    }
+
+    return ans;
+}
 
 };
 

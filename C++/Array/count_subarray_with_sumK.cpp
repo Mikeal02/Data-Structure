@@ -16,7 +16,7 @@
  * - Step 1: Maintain running prefix sum; map freq of each prefix (initialize freq[0]=1).
  * - Step 2: For each prefix P, add freq[P - K] to count, then freq[P]++.
  * - TIME: O(n) | SPACE: O(n) due to unordered_map
- *
+ * CONFIDENCE: Medium
  * AHA-MOMENT: Subarray sum ending at index j equals K iff prefix[j] - prefix[i-1] = K, i.e. count prior prefixes equal to prefix[j] - K.
  */
 
