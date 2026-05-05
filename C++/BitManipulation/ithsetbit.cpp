@@ -2,7 +2,18 @@
 using namespace std;
 int i_setbit(int number,int index)
 {
-    return (number & (1LL << index))!=0;
+    string binary="";
+    while(number>0)
+    {
+        binary+=number%2==0?'0':'1';
+        number/=2;
+    }
+
+    if(index>=binary.length())return 0;
+
+    return binary[index]=='1';
+    //return (number & (1LL << index))!=0;
+
 }
 int main()
 {
