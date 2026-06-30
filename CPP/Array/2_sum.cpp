@@ -46,6 +46,7 @@ class Solution
         return "NO";
     }
 
+    //hashmap
     string two_sum(vector<int>& arr,int target)
     {
         unordered_map<int,int> mp;
